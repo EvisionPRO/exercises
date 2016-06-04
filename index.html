@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+<header>
+
+<title>jQuery</title>
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script> 
+    
+    <style type="text/css">
+    
+        #greenCircle {
+            
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: darkgreen;
+        }
+        
+    </style>
+    
+</header>
+    
+    
+    
+<body>
+    
+   
+    <div id='greenCircle'></div>
+   
+
+   <script>
+       
+       $("#greenCircle").click(function(){
+           
+           $(this).animate({
+               width:"500px",
+               height:"500px",
+               marginLeft:"100px",
+               marginTop:"100px"
+           }, 2000, function(){
+            $(this).css("background-color", "red");
+               
+           });
+       });
+    
+    
+    </script>    
+    
+    
+
+</body>
+
+
+
+
+
+
+
+</html>
