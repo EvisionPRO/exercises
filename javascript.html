@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html>
+
+<body>
+
+    <p>
+    What is a magic word?
+    
+    </p>
+    
+    <input type="text" placeholder="what's the word?" id='input'>
+    
+    <button id='check'>Check it NOW!</button>
+   
+    
+    <script>
+        
+        var magicWord = ['Please'];
+
+        
+        
+        document.getElementById('check').onclick = function() {
+            
+            var magicEnter = document.getElementById('input').value;
+            
+            if (magicEnter == magicWord) {
+                
+                    console.log("wowo dziala");
+            } else {
+                
+                    console.log("nie dziala");
+
+            }
+            
+            
+        }
+        
+        
+        
+    
+      /*
+        var myArray = new Array();
+        
+        myArray[0] = 'pizza';
+        myArray[1] = 'choco'
+        
+        var tweet = ["I like coffee", "I like beveleges"];
+        
+        tweet.push("Why I shout tell you");
+        
+        
+
+        
+        tweet.splice(1, 0, "It is true");
+        
+        tweet.splice(2, 1, "I like only tea");
+    
+
+        console.log(tweet); 
+        
+        var x = 2;
+        
+        if (x == 2) {
+            
+            console.log("Woo that is true");
+        } else {
+            
+            console.log("I'm sorry");
+        }
+        
+       */
+        
+        
+        
+    
+    </script>
+    
+</body>
+
+
+
+</html>
