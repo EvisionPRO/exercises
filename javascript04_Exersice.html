@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+
+    <style type="text/css">
+    
+        #shape {
+            background-color: bisque;
+            height: 190px;
+            width: 190px;
+            display: none;
+        }
+        
+        
+    </style>
+    <body>
+        
+        <h1>Let's see how fast you you are</h1>
+        
+        <p>Your time is: <span id='yourTime'></span></p>
+
+        <div id='shape'></div>
+
+        
+
+
+        <script>
+            
+            
+            
+            var start = new Date().getTime();
+            
+            function makeShape() {
+                
+                document.getElementById('shape').style.display = "block";
+                
+                start = new Date().getTime();
+                
+            }
+            
+            function timeDelay() {
+                setTimeout(makeShape, Math.random() * 2000);
+
+                
+            }
+
+            timeDelay();
+            
+            document.getElementById('shape').onclick = function(){
+
+            document.getElementById('shape').style.display = "none";
+            
+                var end = new Date().getTime();
+                var timeMe = (end - start) / 1000;
+                
+               // timeMe = Math.floor(timeMe);
+                
+                
+                document.getElementById('yourTime').innerHTML = timeMe + "s";
+            timeDelay();
+            }
+
+        
+        </script>
+
+
+
+
+
+
+    </body>
+
+</html>

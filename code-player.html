@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<html>
+<header>
+
+<title></title>
+    
+
+    
+    <script type="text/javascript" src="jquery-ui/external/jquery/jquery.js"></script>
+        
+    <script src="jquery-ui/jquery-ui.js"></script>
+        
+    <link href="jquery-ui/jquery-ui.css" rel="stylesheet">
+    
+<style type="text/css">
+
+    body {
+        font-family: sans-serif;
+        font-size: 1em;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    #header {
+        width: 100%;
+        background-color: #f0f0f0;
+        height: 50px;
+        margin: 0 auto;
+        
+    }
+    
+    h2 {
+        margin: 0px;
+        float: left;
+        padding: 10px 10px 0px 25px;
+        font-weight: bold;
+        
+        
+    }
+    
+    #button-container {
+        width: 250px;
+        margin: 0 auto;
+        padding-top: 8px;
+        padding-left: 35px;
+
+    }
+    
+    .buttons {
+       
+        background-color: #f0f0f0;
+        border: 1px solid #a6aab1;
+        border-right: none;
+        color: #464646;
+        padding: 6px;
+        font-size: 1.0em;
+        cursor: pointer;
+        float: left;
+        
+        
+    }
+
+    .buttons:hover {
+        box-shadow: 0 1px 2px 0 rgba(0,0,0,0.24),0 2px 1px 0 rgba(0,0,0,0.19);
+    }
+    .buttons:active {
+        opacity: 0.6;
+    }
+    
+    #html {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+    
+    #output {
+        border-right: 1px solid #a6aab1;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px
+
+    }
+    
+    .active {
+        background-color: #E8F2FF;
+    }
+    
+    .highlight {
+        background-color: #b4b4b4;
+    }
+    
+    textarea {
+        width: 50%;
+        resize: none;
+        border-top: none;
+        border-color: #b4b4b4;
+        border-bottom: none;
+    }
+    
+    .panel {
+        float: left;
+    }
+    
+    iframe {
+        border: none;
+    }
+    
+</style>
+    
+    
+</header>
+<body>
+    <div id="header">
+        
+        
+        <h2>CodePlayer</h2>
+        
+        <div id="button-container">    
+
+            <div class="buttons active" id="html">HTML</div>
+            <div class="buttons" id="css">CSS</div>
+            <div class="buttons" id="java">Javascript</div>
+            <div class="buttons active" id="output">Output</div>
+
+        </div>
+    
+    </div>
+    <div id="text-container">
+    
+        <textarea id="htmlPanel" class="panel">
+            
+        Hello World!
+        
+        </textarea>
+        
+        <iframe id="outputPanel" class="panel"></iframe>
+
+    
+    
+    
+    
+    </div>
+
+    
+    
+    
+    <script>
+ 
+        $(".buttons").hover( function() {
+            $(this).addClass("highlight");
+
+        }, function() {
+            $(this).removeClass("highlight");    
+            
+        });
+        
+        $(".buttons").click(function() {
+            
+            $(this).toggleClass("active");
+            
+            $(this).removeClass("highlight");
+        });
+
+        $(".panel").height($(window).height() - $('#header').height());
+        
+        $(".panel").width(($(window).width() / 2) - 5);
+        
+        $("iframe").contents().find("html").html('My html');
+
+
+        
+    </script>
+    
+    
+
+</body>
+
+
+
+
+
+
+
+</html>
