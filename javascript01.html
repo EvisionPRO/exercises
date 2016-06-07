@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html>
+
+<body>
+    
+    <div id='newDiv'>
+    
+    </div>
+  
+<script type="text/javascript">
+    
+    var tweets = ["I like coffee", "God is good", "Want to have tea", "Check your email"];
+    
+    var tweetString = "";
+    
+    var i = 0;
+    
+    while (i < tweets.length) {
+        
+        tweetString = tweetString + "<p>" + tweets[i] + "</p>";
+        i++
+    }
+    
+    document.getElementById('newDiv').innerHTML = tweetString;
+
+    
+</script>
+    
+    <!--
+    
+<div>    
+
+   <h2>How many fingers am I holding up?</h2>
+    
+    <input type="text" placeholder="try it!" id='enter'>
+    <button id='check'>Please check it!</button>
+    
+    <script>
+        document.getElementById('check').onclick = function() {
+        
+        var number = [0,1,2,3,4,5];
+        var numberEntered = document.getElementById('enter').value;
+        var random = Math.floor(Math.random() * 6);
+        
+        
+            
+            if(numberEntered == random) {
+                
+                console.log("Good job");
+                
+            } else {
+                
+               console.log("WRONG. You should pick " + random);
+
+            }
+            
+        }
+        
+        
+    </script>
+    
+    
+</div>
+
+-->
+    
+</body>
+
+
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+<header>
+
+<title>jQuery UI</title>
+    
+
+    
+    <script type="text/javascript" src="jquery-ui/external/jquery/jquery.js"></script>
+        
+    <script src="jquery-ui/jquery-ui.js"></script>
+        
+    <link href="jquery-ui/jquery-ui.css" rel="stylesheet">
+    
+<style type="text/css">
+
+    #draggable { 
+        background-color: antiquewhite;
+        width: 100px; 
+        height: 100px; 
+        padding: 0.5em; 
+        float: left; 
+        margin: 10px 10px 10px 0; 
+    }
+    
+    #droppable { 
+        background-color: brown;
+        width: 150px; 
+        height: 150px; 
+        padding: 0.5em; 
+        float: left; 
+        margin: 10px; }
+
+
+</style>
+    
+    
+</header>
+<body>
+ 
+    <h2>Drag and drop small</h2>
+    
+    <div id="draggable"></div>
+    <div id="droppable"></div>
+
+    <script>
+
+        $(function() {
+    $( "#draggable" ).draggable();
+    $( "#droppable" ).droppable({
+      drop: function( event, ui ) {
+          alert("Congratulation! It dropped!")
+          
+      }
+    });
+  });
+    
+    </script>
+    
+    
+
+</body>
+
+
+
+
+
+
+
+</html>

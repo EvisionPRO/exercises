@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html>
+<header>
+
+<title>jQuery UI</title>
+    
+
+    
+    <script type="text/javascript" src="jquery-ui/external/jquery/jquery.js"></script>
+        
+    <script src="jquery-ui/jquery-ui.js"></script>
+        
+    <link href="jquery-ui/jquery-ui.css" rel="stylesheet">
+    
+<style type="text/css">
+
+    
+  #draggable { 
+      width: 150px; 
+      height: 150px; 
+      padding: 0.5em; 
+      background-color: bisque;
+    }
+
+    
+    #resizable { 
+        width: 150px; 
+        height: 150px; 
+        padding: 0.5em; 
+        background-color: pink;
+    }
+    
+
+    
+</style>
+    
+    
+</header>
+<body>
+ 
+    <div id="draggable">
+      <p>Drag me around Please :)</p>
+    
+    </div>
+    
+     <div id="draggable5" style="width:80px;height:80px;background-color:#6e6eba">
+         <span>Drag me around Please :)</span>
+    
+    </div>
+    
+    <div id='resizable'></div>
+
+           
+    <script>
+        
+    $( "#draggable" ).draggable({ axis: "y" });
+    $( "span" ).draggable({ containment: "parent" });
+        
+    $( "#resizable" ).resizable();
+
+
+
+    
+    </script>
+    
+    
+
+</body>
+
+
+
+
+
+
+
+</html>

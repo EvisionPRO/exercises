@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html>
+<header>
+
+<title>jQuery</title>
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script> 
+    
+    <style type="text/css">
+    
+        #greenCircle {
+            width: 120px;
+            height: 120px;
+            background-color: darkgreen;
+            border-radius: 50%;
+            margin-bottom: 30px;
+        }
+        
+        .redSquare {
+            
+            width: 120px;
+            height: 120px;
+            background-color: firebrick;
+            margin-bottom: 30px;
+        }
+    
+        
+    </style>
+    
+</header>
+    
+    
+    
+<body>
+    
+   
+    <div id='greenCircle'></div>
+    
+        <div class='redSquare'></div>
+
+        <div class='redSquare'></div>
+
+    
+   
+    
+
+<p id="myText">I just want to learn more about JavaScript</p>
+    
+    <button id="myButton">Please click me NOW!</button>
+    
+<script type="text/javascript">
+    
+    
+   $("#myButton").click(function(){
+       
+      if($("#myText").css("display") == "none") {
+          
+          $("#myText").fadeIn("slow"); 
+      } else {
+          
+           $("#myText").fadeOut("slow");
+          
+      }
+       
+       
+   });
+        
+   
+    
+    
+    
+    </script>    
+    
+    
+
+</body>
+
+
+
+
+
+
+
+</html>
