@@ -97,11 +97,17 @@
     }
     
     .panel {
+        border-left: "none";
         float: left;
+        
     }
     
     iframe {
         border: none;
+    }
+    
+    .hidden {
+        display: none;
     }
     
 </style>
@@ -126,16 +132,16 @@
     </div>
     <div id="text-container">
     
-        <textarea id="htmlPanel" class="panel">
-            
-        Hello World!
-        
-        </textarea>
+        <textarea id="htmlPanel" class="panel"><p id="paragraph">Hello World!</p></textarea>
+        <textarea id="cssPanel" class="panel hidden">p { color: green; }</textarea>
+        <textarea id="javaPanel" class="panel hidden">
+        document.getElementById('paragraph').innerHTML = "It works"</textarea>
+
         
         <iframe id="outputPanel" class="panel"></iframe>
 
     
-    
+
     
     
     </div>
@@ -144,6 +150,13 @@
     
     
     <script>
+        
+        function updateOutput () {
+            $("iframe").contents().find("html").html("<html><head><style type='text/css'>" + $("#cssPanel").val() + "</style></head><body>" + $("#htmlPanel").val() + "</body></html>");
+            
+            document.getElementById('outputPanel').contentWindow.eval($("#javaPanel").val());
+        }
+        
  
         $(".buttons").hover( function() {
             $(this).addClass("highlight");
@@ -158,15 +171,34 @@
             $(this).toggleClass("active");
             
             $(this).removeClass("highlight");
+        
+        
+            var panelId = $(this).attr("id") + "Panel";
+
+            $("#" + panelId).toggleClass("hidden");
+            
+            var numberActivePanels = 4 - $('hidden').length;
+            $(".panel").width(($(window).width() / numberActivePanels) - 5);
+
+
         });
+        
 
         $(".panel").height($(window).height() - $('#header').height());
         
         $(".panel").width(($(window).width() / 2) - 5);
+                
+       /* $("iframe").contents().find("html").html("<html><head><style type='text/css'>" + $("#cssPanel").val() + "</style></head><body>" + $("#htmlPanel").val() + "</body></html>");*/
         
-        $("iframe").contents().find("html").html('My html');
+        updateOutput();
 
 
+        $("textarea").on('change keyup paste', function() {
+        $("iframe").contents().find("html").html($("#htmlPanel").val());
+            
+        updateOutput();
+
+        });
         
     </script>
     
